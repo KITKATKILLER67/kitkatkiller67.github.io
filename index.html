@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evergreen Electronics | Repair & Service</title>
+    <meta
+      name="description"
+      content="Evergreen Electronics provides trusted electronics repair and troubleshooting for homes and small businesses in Evergreen, Colorado."
+    />
+    <style>
+      :root {
+        --forest: #1d4d3f;
+        --forest-dark: #163c32;
+        --moss: #7ea86d;
+        --sage: #dfead8;
+        --cream: #f7f5f0;
+        --charcoal: #1f2321;
+        --muted: #5d665f;
+        --white: #ffffff;
+        --shadow: 0 16px 40px rgba(22, 60, 50, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--cream);
+        color: var(--charcoal);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        background: linear-gradient(135deg, var(--forest-dark), var(--forest));
+        color: var(--white);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .brand span {
+        color: #cfe3b5;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        font-size: 0.95rem;
+      }
+
+      .nav-links a {
+        opacity: 0.9;
+      }
+
+      .nav-links a:hover {
+        opacity: 1;
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--moss);
+        color: var(--white);
+        padding: 14px 24px;
+        border-radius: 999px;
+        font-weight: 700;
+        box-shadow: var(--shadow);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 18px 30px rgba(25, 111, 92, 0.18);
+      }
+
+      .hero {
+        background: linear-gradient(180deg, rgba(29, 77, 63, 0.96), rgba(25, 56, 47, 0.92));
+        color: var(--white);
+        padding: 90px 0 70px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 5vw, 4.3rem);
+        line-height: 1.08;
+        margin: 0 0 20px;
+      }
+
+      .hero p {
+        font-size: 1.08rem;
+        max-width: 620px;
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 30px;
+      }
+
+      .secondary-btn {
+        display: inline-block;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        color: var(--white);
+        padding: 14px 22px;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+
+      .hero-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(4px);
+        border-radius: 24px;
+        padding: 24px;
+      }
+
+      .stat-box {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        gap: 18px;
+        margin-top: 20px;
+      }
+
+      .stat {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        padding: 18px 14px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.7rem;
+        margin-bottom: 6px;
+      }
+
+      .section {
+        padding: 90px 0;
+      }
+
+      .section-header {
+        max-width: 700px;
+        margin: 0 auto 42px;
+        text-align: center;
+      }
+
+      .section-header h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin: 0 0 14px;
+      }
+
+      .section-header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.04rem;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(220px, 1fr));
+        gap: 24px;
+      }
+
+      .service {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 28px 22px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(29, 77, 63, 0.06);
+      }
+
+      .icon {
+        width: 62px;
+        height: 62px;
+        display: grid;
+        place-items: center;
+        background: var(--sage);
+        color: var(--forest-dark);
+        border-radius: 18px;
+        font-size: 1.7rem;
+        margin-bottom: 18px;
+      }
+
+      .service h3 {
+        margin: 0 0 12px;
+        font-size: 1.35rem;
+      }
+
+      .service p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .about {
+        background: linear-gradient(180deg, #edf4eb, #f8faf6);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 34px;
+        align-items: center;
+      }
+
+      .about-panel {
+        background: var(--white);
+        border-radius: 28px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+      }
+
+      .about-panel h3 {
+        margin-top: 0;
+        font-size: 1.8rem;
+      }
+
+      .check-list {
+        list-style: none;
+        padding: 0;
+        margin: 22px 0 0;
+      }
+
+      .check-list li {
+        position: relative;
+        padding-left: 32px;
+        margin-bottom: 14px;
+        color: var(--charcoal);
+      }
+
+      .check-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--sage);
+        color: var(--forest-dark);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        font-size: 0.8rem;
+      }
+
+      .feature-box {
+        background: var(--forest);
+        color: var(--white);
+        border-radius: 28px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+      }
+
+      .feature-box h3 {
+        margin-top: 0;
+        font-size: 1.8rem;
+      }
+
+      .mini-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .mini-item {
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 20px;
+        padding: 18px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .mini-item strong {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+      }
+
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .contact-card {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .contact-card h3 {
+        margin-top: 0;
+        font-size: 2rem;
+      }
+
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0;
+      }
+
+      .contact-list li {
+        margin-bottom: 12px;
+        color: var(--muted);
+      }
+
+      .contact-list strong {
+        color: var(--charcoal);
+      }
+
+      .callout {
+        background: linear-gradient(135deg, var(--forest), var(--forest-dark));
+        color: var(--white);
+        border-radius: 28px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+      }
+
+      .callout p {
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      footer {
+        background: #0c1f1a;
+        color: rgba(255, 255, 255, 0.8);
+        padding: 26px 0;
+        text-align: center;
+      }
+
+      @media (max-width: 880px) {
+        .hero-grid,
+        .about-grid,
+        .contact-wrap,
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          flex-direction: column;
+          gap: 18px;
+        }
+
+        .nav-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .hero {
+          padding-top: 70px;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .stat-box,
+        .mini-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a href="#top" class="brand">Evergreen <span>Electronics</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="btn">Book a Repair</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">Evergreen, Colorado</div>
+            <h1>Fixing everyday tech with honest care.</h1>
+            <p>
+              Evergreen Electronics is a local, home-based repair business serving
+              homeowners and families in Evergreen, Colorado. From phones and laptops
+              to gaming systems and household devices, we bring reliable repair and
+              practical solutions right to the community we serve.
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn">Request Service</a>
+              <a href="#services" class="secondary-btn">Explore Repairs</a>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="Business overview">
+            <h2 style="margin-top: 0; font-size: 1.7rem;">Home-based. Trusted. Local.</h2>
+            <p style="color: rgba(255,255,255,0.8); margin-bottom: 0;">
+              Small-business repair done the right way—clear communication, fair pricing,
+              and dependable results.
+            </p>
+            <div class="stat-box">
+              <div class="stat">
+                <strong>1:1</strong>
+                Personalized attention
+              </div>
+              <div class="stat">
+                <strong>Fast</strong>
+                Local turnaround
+              </div>
+              <div class="stat">
+                <strong>Home</strong>
+                Based service
+              </div>
+              <div class="stat">
+                <strong>Honest</strong>
+                Straightforward advice
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Electronics repair for the devices you rely on.</h2>
+            <p>
+              Whether your gear needs a quick fix or a more detailed diagnosis, Evergreen
+              Electronics is here to help you get back to normal.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <article class="service">
+              <div class="icon">📱</div>
+              <h3>Phone & Tablet Repair</h3>
+              <p>
+                Screen replacements, charging port fixes, battery issues, and general
+                troubleshooting for everyday mobile devices.
+              </p>
+            </article>
+
+            <article class="service">
+              <div class="icon">💻</div>
+              <h3>Laptop & Computer Support</h3>
+              <p>
+                Slow performance, startup issues, hardware repairs, and diagnostics for
+                personal and home-office devices.
+              </p>
+            </article>
+
+            <article class="service">
+              <div class="icon">🎮</div>
+              <h3>Game Console Repair</h3>
+              <p>
+                Troubleshooting for controllers, power problems, connectivity issues, and
+                device maintenance for your game setup.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div class="container about-grid">
+          <div class="about-panel">
+            <h3>Built on practical help and local trust.</h3>
+            <p style="color: var(--muted);">
+              Evergreen Electronics is a small, home-based business serving Evergreen,
+              Colorado, with a focus on honest communication, dependable work, and real
+              solutions for everyday electronics problems.
+            </p>
+            <ul class="check-list">
+              <li>Friendly help for homes and small households</li>
+              <li>Clear explanations before work begins</li>
+              <li>Repair guidance tailored to your device and budget</li>
+              <li>Local service with a personal touch</li>
+            </ul>
+          </div>
+
+          <div class="feature-box">
+            <h3>Why people choose us.</h3>
+            <p>
+              As a home business, we combine personalized service with practical expertise,
+              so you always know what is happening with your device and what to expect.
+            </p>
+
+            <div class="mini-grid">
+              <div class="mini-item">
+                <strong>Clear</strong>
+                Pricing and repair updates
+              </div>
+              <div class="mini-item">
+                <strong>Local</strong>
+                Based in Evergreen
+              </div>
+              <div class="mini-item">
+                <strong>Reliable</strong>
+                Thoughtful troubleshooting
+              </div>
+              <div class="mini-item">
+                <strong>Helpful</strong>
+                Friendly customer service
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container contact-wrap">
+          <div class="contact-card">
+            <h3>Let’s get your device working again.</h3>
+            <p style="color: var(--muted);">
+              Need a repair, diagnosis, or advice? Reach out and we’ll be happy to help.
+            </p>
+            <ul class="contact-list">
+              <li><strong>Business:</strong> Evergreen Electronics</li>
+              <li><strong>Location:</strong> Evergreen, Colorado</li>
+              <li><strong>Service:</strong> Electronics repair and troubleshooting</li>
+              <li><strong>Contact:</strong> (303) 555-0147</li>
+              <li><strong>Email:</strong> hello@evergreenelectronics.com</li>
+            </ul>
+          </div>
+
+          <div class="callout">
+            <h3 style="margin-top: 0; font-size: 2rem;">Service with a personal touch.</h3>
+            <p>
+              We’re a home-based business that values trust, quality service, and helping
+              neighbors keep their technology running smoothly.
+            </p>
+            <a href="mailto:hello@evergreenelectronics.com" class="btn">Email Us</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2025 Evergreen Electronics • Repairing devices with care in Evergreen, Colorado
+    </footer>
+  </body>
+</html>
