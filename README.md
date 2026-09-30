@@ -14,3 +14,4 @@ Changelog - 30.09.2026patch1
 To Do
 * Create a website dark mode (as an option for "Dark Readers")
 * Create an effective theme toggle switch (up to Zach)
+* Fix #top
