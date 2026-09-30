@@ -3,7 +3,7 @@ This is my personal webpage for shenanigans. Eventually it will either show a bu
 
 
 
-Ignoring that,
+## Ignoring that,
 
 Changelog - 30.09.2026patch1
 * Transferred all inline CSS from index.html to oldindex.css
